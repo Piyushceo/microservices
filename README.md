@@ -54,21 +54,21 @@ Commands:
 Run 'docker container COMMAND --help' for more information on a command.  
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker stop my-nginx ```
 my-nginx  
-``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls ```
+``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls ```   
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES  
-``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls -a ```
+``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls -a ```   
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                      PORTS     NAMES  
 4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   2 minutes ago   Exited (0) 39 seconds ago             my-nginx  
-``` root@nothing-desktop:/home/nothing/docker-learn# docker start my-nginx ```   
+``` root@nothing-desktop:/home/nothing/docker-learn# docker start my-nginx ```     
 my-nginx   
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls ```    
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS          PORTS                  NAMES
-4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   3 minutes ago   Up 57 seconds   0.0.0.0:8085->80/tcp   my-nginx
+4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   3 minutes ago   Up 57 seconds   0.0.0.0:8085->80/tcp   my-nginx   
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker start my-nginx ```    
 my-nginx
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls ```   
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES
-4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   4 minutes ago   Up 2 minutes   0.0.0.0:8085->80/tcp   my-nginx
+4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   4 minutes ago   Up 2 minutes   0.0.0.0:8085->80/tcp   my-nginx  
 ``` root@nothing-desktop:/home/nothing/docker-learn# FROM nginx:1.17.5 ```   
 FROM: command not found     
 ``` root@nothing-desktop:/home/nothing/docker-learn# nano Dockerfile ```   
