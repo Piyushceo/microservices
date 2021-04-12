@@ -1,41 +1,41 @@
-#### nothing@nothing-desktop:~$ docker pull nginx:1.17.5
+
+#### nothing@nothing-desktop:~$ docker pull nginx:1.17.5  
 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=nginx&tag=1.17.5: dial unix /var/run/docker.sock: connect: permission denied
 nothing@nothing-desktop:~$ sudo docker pull nginx:1.17.5
 [sudo] password for nothing: 
 ^C
-#### nothing@nothing-desktop:~$ mkdir docker-learn
-#### nothing@nothing-desktop:~$ cd docker-learn && mkdir html
+#### nothing@nothing-desktop:~$ mkdir docker-learn  
+#### nothing@nothing-desktop:~$ cd docker-learn && mkdir html  
 #### nothing@nothing-desktop:~/docker-learn$ ls
-html
-#### nothing@nothing-desktop:~/docker-learn$ sudo docker pull nginx:1.17.5
+html  
+#### nothing@nothing-desktop:~/docker-learn$ sudo docker pull nginx:1.17.5  
         
-1.17.5: Pulling from library/nginx
-8d691f585fa8: Pull complete 
-5b07f4e08ad0: Pull complete 
-abc291867bca: Pull complete 
-Digest: sha256:922c815aa4df050d4df476e92daed4231f466acc8ee90e0e774951b0fd7195a4
-Status: Downloaded newer image for nginx:1.17.5
-docker.io/library/nginx:1.17.5
-### nothing@nothing-desktop:~/docker-learn$ 
-### nothing@nothing-desktop:~/docker-learn$ docker image ls
+1.17.5: Pulling from library/nginx  
+8d691f585fa8: Pull complete  
+5b07f4e08ad0: Pull complete  
+abc291867bca: Pull complete   
+Digest: sha256:922c815aa4df050d4df476e92daed4231f466acc8ee90e0e774951b0fd7195a4  
+Status: Downloaded newer image for nginx:1.17.5  
+docker.io/library/nginx:1.17.5  
+#### nothing@nothing-desktop:~/docker-learn$ docker image ls
 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json: dial unix /var/run/docker.sock: connect: permission denied
 nothing@nothing-desktop:~/docker-learn$ sudo docker image ls
 REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
 nginx        1.17.5    540a289bab6c   17 months ago   126MB
-#### nothing@nothing-desktop:~/docker-learn$ sudo su
+#### nothing@nothing-desktop:~/docker-learn$ sudo su  
 #### root@nothing-desktop:/home/nothing/docker-learn# docker run --name my-nginx -d -p 8085:80 /home/nothing/docker-learn/html:/usr/share/nginx/html nginx:1.17.5
-docker: invalid reference format.
-See 'docker run --help'.
+docker: invalid reference format.  
+See 'docker run --help'.  
 #### root@nothing-desktop:/home/nothing/docker-learn# docker run --name my-nginx -d -p 8085:80 \home\nothing\docker-learn\html:/usr/share/nginx/html nginx:1.17.5
-docker: invalid reference format.
-See 'docker run --help'.
-#### root@nothing-desktop:/home/nothing/docker-learn# docker run --name my-nginx -d -p 8085:80 -v /home/nothing/docker-learn/html:/usr/share/nginx/html nginx:1.17.5
-4a51cc13bc35bbcc99168e6c14bc97d9b9b4e2b2db7cd4e0e981a9a33b1d65b0
-root@nothing-desktop:/home/nothing/docker-learn# docker container js
+docker: invalid reference format.  
+See 'docker run --help'.  
+#### root@nothing-desktop:/home/nothing/docker-learn# docker run --name my-nginx -d -p 8085:80 -v /home/nothing/docker-learn/html:/usr/share/nginx/html nginx:1.17.5  
+4a51cc13bc35bbcc99168e6c14bc97d9b9b4e2b2db7cd4e0e981a9a33b1d65b0  
+root@nothing-desktop:/home/nothing/docker-learn# docker container js  
 
-Usage:  docker container COMMAND
+Usage:  docker container COMMAND  
 
-Manage containers
+Manage containers    
 
 Commands:
   attach      Attach local standard input, output, and error streams to a running container  
