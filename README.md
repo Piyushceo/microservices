@@ -11,11 +11,11 @@ abc291867bca: Pull complete
 Digest: sha256:922c815aa4df050d4df476e92daed4231f466acc8ee90e0e774951b0fd7195a4  
 Status: Downloaded newer image for nginx:1.17.5  
 docker.io/library/nginx:1.17.5  
-``` nothing@nothing-desktop:~/docker-learn$ docker image ls ```
-Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json: dial unix /var/run/docker.sock: connect: permission denied
+``` nothing@nothing-desktop:~/docker-learn$ docker image ls ```  
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json: dial unix /var/run/docker.sock: connect: permission denied  
 ``` nothing@nothing-desktop:~/docker-learn$ sudo docker image ls ```
 REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
-nginx        1.17.5    540a289bab6c   17 months ago   126MB
+nginx        1.17.5    540a289bab6c   17 months ago   126MB  
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker run --name my-nginx -d -p 8085:80 -v /home/nothing/docker-learn/html:/usr/share/nginx/html nginx:1.17.5  ```
 4a51cc13bc35bbcc99168e6c14bc97d9b9b4e2b2db7cd4e0e981a9a33b1d65b0  
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container js ``` 
@@ -51,11 +51,11 @@ Commands:
   update      Update configuration of one or more containers  
   wait        Block until one or more containers stop, then print their exit codes  
 
-Run 'docker container COMMAND --help' for more information on a command.
+Run 'docker container COMMAND --help' for more information on a command.  
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker stop my-nginx ```
-my-nginx
+my-nginx  
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls ```
-CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES  
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls -a ```
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                      PORTS     NAMES  
 4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   2 minutes ago   Exited (0) 39 seconds ago             my-nginx  
@@ -77,26 +77,26 @@ Sending build context to Docker daemon   2.56kB
 Step 1/2 : FROM nginx:1.17.5  
  ---> 540a289bab6c  
 Step 2/2 : COPY home.html /usr/share/nginx/html  
-COPY failed: file not found in build context or excluded by .dockerignore: stat home.html: file does not exist
-``` root@nothing-desktop:/home/nothing/docker-learn# nano Dockerfile ```
-``` root@nothing-desktop:/home/nothing/docker-learn# docker build . ```
+COPY failed: file not found in build context or excluded by .dockerignore: stat home.html: file does not exist  
+``` root@nothing-desktop:/home/nothing/docker-learn# nano Dockerfile ```  
+``` root@nothing-desktop:/home/nothing/docker-learn# docker build . ```  
 Sending build context to Docker daemon   2.56kB  
 Step 1/2 : FROM nginx:1.17.5  
  ---> 540a289bab6c  
 Step 2/2 : COPY index.html /usr/share/nginx/html  
 COPY failed: file not found in build context or excluded by .dockerignore: stat index.html: file does not exist  
-``` root@nothing-desktop:/home/nothing/docker-learn# nano Dockerfile   ```
-``` root@nothing-desktop:/home/nothing/docker-learn# docker build .  ```
+``` root@nothing-desktop:/home/nothing/docker-learn# nano Dockerfile   ```  
+``` root@nothing-desktop:/home/nothing/docker-learn# docker build .  ```  
 Sending build context to Docker daemon   2.56kB  
 Step 1/2 : FROM nginx:1.17.5  
  ---> 540a289bab6c  
 Step 2/2 : COPY home.html /usr/share/nginx/html  
-COPY failed: file not found in build context or excluded by .dockerignore: stat home.html: file does not exist
-``` root@nothing-desktop:/home/nothing/docker-learn# docker build . ```
-Sending build context to Docker daemon  3.584kB  
+COPY failed: file not found in build context or excluded by .dockerignore: stat home.html: file does not exist  
+``` root@nothing-desktop:/home/nothing/docker-learn# docker build . ```  
+Sending build context to Docker daemon  3.584kB    
 Step 1/2 : FROM nginx:1.17.5  
  ---> 540a289bab6c  
 Step 2/2 : COPY home.html /usr/share/nginx/html  
  ---> e6cad9190e1a  
 Successfully built e6cad9190e1a  
-``` root@nothing-desktop:/home/nothing/docker-learn# ```
+``` root@nothing-desktop:/home/nothing/docker-learn# ```  
