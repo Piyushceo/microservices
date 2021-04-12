@@ -73,12 +73,16 @@ my-nginx
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls ```   
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES  
 
-## Currently stopped containers
+## Listing currently stopped containers
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls -a ```   
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                      PORTS     NAMES  
 4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   2 minutes ago   Exited (0) 39 seconds ago             my-nginx  
+
+## Starting the nginx container
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker start my-nginx ```     
 my-nginx   
+
+## Listing the currently running containers
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls ```    
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS          PORTS                  NAMES
 4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   3 minutes ago   Up 57 seconds   0.0.0.0:8085->80/tcp   my-nginx   
@@ -89,7 +93,11 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS   
 4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   4 minutes ago   Up 2 minutes   0.0.0.0:8085->80/tcp   my-nginx  
 ``` root@nothing-desktop:/home/nothing/docker-learn# FROM nginx:1.17.5 ```   
 FROM: command not found     
-``` root@nothing-desktop:/home/nothing/docker-learn# nano Dockerfile ```   
+
+## Creating the Dockerfile
+``` root@nothing-desktop:/home/nothing/docker-learn# nano Dockerfile ```  
+
+## Building the docker image
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker build . ```  
 Sending build context to Docker daemon   2.56kB  
 Step 1/2 : FROM nginx:1.17.5  
