@@ -1,9 +1,13 @@
-## Docker hands on
+# Docker hands on
 
+## Creating docker-learn folder
 ``` nothing@nothing-desktop:~$ mkdir docker-learn  ```    
+## Creating html folder
 ``` nothing@nothing-desktop:~$ cd docker-learn && mkdir html  ```    
+## Listing the folders
 ``` nothing@nothing-desktop:~/docker-learn$ ls ```    
 html  
+## Pulling the nginx image
 ``` nothing@nothing-desktop:~/docker-learn$ sudo docker pull nginx:1.17.5 ```     
         
 1.17.5: Pulling from library/nginx  
@@ -13,14 +17,20 @@ abc291867bca: Pull complete
 Digest: sha256:922c815aa4df050d4df476e92daed4231f466acc8ee90e0e774951b0fd7195a4  
 Status: Downloaded newer image for nginx:1.17.5  
 docker.io/library/nginx:1.17.5  
+
+## Listing the docker images
 ``` nothing@nothing-desktop:~/docker-learn$ docker image ls ```      
 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json: dial unix /var/run/docker.sock: connect: permission denied  
 ``` nothing@nothing-desktop:~/docker-learn$ sudo docker image ls ```    
 REPOSITORY   TAG       IMAGE ID       CREATED         SIZE  
 nginx        1.17.5    540a289bab6c   17 months ago   126MB  
+
+## Running the docker image for nginx on a specific sport
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker run --name my-nginx -d -p 8085:80 -v /home/nothing/docker-learn/html:/usr/share/nginx/html nginx:1.17.5  ```   
 4a51cc13bc35bbcc99168e6c14bc97d9b9b4e2b2db7cd4e0e981a9a33b1d65b0  
-``` root@nothing-desktop:/home/nothing/docker-learn# docker container js ```     
+
+## Checking the docker container commands
+``` root@nothing-desktop:/home/nothing/docker-learn# docker container ```     
 
 Usage:  docker container COMMAND     
 
@@ -54,10 +64,16 @@ Commands:
   wait        Block until one or more containers stop, then print their exit codes  
 
 Run 'docker container COMMAND --help' for more information on a command.  
+
+## Stopping the nginx daemon
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker stop my-nginx ```
 my-nginx  
+
+## Currently running containers
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls ```   
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES  
+
+## Currently stopped containers
 ``` root@nothing-desktop:/home/nothing/docker-learn# docker container ls -a ```   
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                      PORTS     NAMES  
 4a51cc13bc35   nginx:1.17.5   "nginx -g 'daemon of…"   2 minutes ago   Exited (0) 39 seconds ago             my-nginx  
